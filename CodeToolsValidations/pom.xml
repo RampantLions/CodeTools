@@ -2,33 +2,24 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>CodeTools</artifactId>
-	<name>${project.artifactId}</name>
-	<description>${codetools.module.root}</description>
+	<name>${artifactId}</name>
+	<artifactId>CodeToolsValidations</artifactId>
+	<description>Tools to help with code analyzing and manipulating.</description>
 	<url>${github.url}/${project.artifactId}/</url>
 	<inceptionYear>2015</inceptionYear>
 
 	<parent>
-		<artifactId>maven</artifactId>
+		<artifactId>CodeTools</artifactId>
 		<groupId>io.github.rampantlions</groupId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../maven/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	
-	<modules>
-		<module>CodeToolsCore</module>
-		<module>CodeToolsModules/CodeToolsGson</module>
-		<module>CodeToolsModules/CodeToolsHibernate</module>
-		<module>CodeToolsModules/CodeToolsJackson1</module>
-		<module>CodeToolsModules/CodeToolsJackson2</module>
-		<module>CodeToolsModules/CodeToolsJaxB</module>
-		<module>CodeToolsModules/CodeToolsSwagger</module>
-		<module>CodeToolsValidations</module>
-	</modules>
-	
+
+	<packaging>jar</packaging>
+
 	<properties>
-		<codetools.module.root>CodeTools</codetools.module.root>
-		<inher.relative.ghnexus>/..</inher.relative.ghnexus>
+		<codetools.module.root>CodeToolsValidations</codetools.module.root>
+		<inher.relative.ghnexus>/../..</inher.relative.ghnexus>
 		<suiteXmlFile></suiteXmlFile>
 		<skipTests>true</skipTests>
 		<testFailureIgnore>true</testFailureIgnore>
@@ -59,7 +50,6 @@
 	</repositories>
 
 	<build>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -111,5 +101,36 @@
 		<maven>2.2.0</maven>
 	</prerequisites>
 
-	<packaging>pom</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>${github.ioserver.pkg}.${github.ioserver.userOrOrg}</groupId>
+			<artifactId>CodeToolsCore</artifactId>
+			<version>[0.0.1-SNAPSHOT,)</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20141113</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>[2.3.1,)</version>
+		</dependency>
+	</dependencies>
 </project>
