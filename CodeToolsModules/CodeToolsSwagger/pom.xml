@@ -19,6 +19,7 @@
 		<module>CodeToolsSwaggerAnnotations</module>
 		<module>CodeToolsSwaggerDependencies</module>
 		<module>CodeToolsSwaggerProcessors</module>
+		<module>CodeToolsSwaggerGenerators</module>
 	</modules>
 	
 	<properties>

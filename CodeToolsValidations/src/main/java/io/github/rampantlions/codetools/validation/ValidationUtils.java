@@ -35,7 +35,7 @@ import com.google.gson.Gson;
 /**
  * The Class ValidationUtils.
  *
- * @author Wiechman, Joshua <jwiechman@paypal.com>
+ * @author Wiechman, Joshua <josh.wiechman@gmail.com>
  */
 public class ValidationUtils
 {
